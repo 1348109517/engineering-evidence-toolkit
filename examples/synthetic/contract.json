@@ -1,0 +1,58 @@
+{
+  "contract_version": "0.1",
+  "artifact_id": "synthetic-tunnel-audit-001",
+  "scope": {
+    "model": "synthetic-shield-tunnel",
+    "step": "Step-Mechanical",
+    "region": "crown-and-springline"
+  },
+  "inputs": [
+    {
+      "name": "mesh-and-material-manifest",
+      "source_id": "SYNTH-MANIFEST-001",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "units": "SI"
+    },
+    {
+      "name": "boundary-condition-manifest",
+      "source_id": "SYNTH-BC-001",
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "units": "m, Pa, s"
+    }
+  ],
+  "solver_status": {
+    "datacheck": "passed",
+    "analysis": "complete",
+    "physics_review": "passed"
+  },
+  "evidence": [
+    {
+      "id": "E-SYN-001",
+      "kind": "field",
+      "source_id": "SYNTH-ODB-001",
+      "field": "PEEQ",
+      "frame": 103,
+      "time": 1.0,
+      "units": "1",
+      "coordinate_system": "global"
+    },
+    {
+      "id": "E-SYN-002",
+      "kind": "history",
+      "source_id": "SYNTH-HISTORY-001",
+      "field": "U2",
+      "frame": 103,
+      "time": 1.0,
+      "units": "m",
+      "coordinate_system": "global"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-SYN-001",
+      "text": "The synthetic run reports a non-zero crown response at the final frame.",
+      "evidence_ids": ["E-SYN-001", "E-SYN-002"],
+      "readiness": "ready-for-example-only"
+    }
+  ]
+}
