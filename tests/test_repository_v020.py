@@ -115,10 +115,10 @@ class RepositoryV020Tests(unittest.TestCase):
                 path.write_text("D" + ":\\private marker", encoding="utf-8")
 
             files = set(iter_public_files(root))
-            self.assertIn(notice, files)
-            self.assertIn(test_file, files)
-            self.assertNotIn(root / ".worktrees" / "ignored.txt", files)
-            self.assertNotIn(root / "build" / "ignored.txt", files)
+            self.assertIn(notice.resolve(), files)
+            self.assertIn(test_file.resolve(), files)
+            self.assertNotIn((root / ".worktrees" / "ignored.txt").resolve(), files)
+            self.assertNotIn((root / "build" / "ignored.txt").resolve(), files)
             errors = scan_public_tree(root)
             self.assertTrue(any("NOTICE" in error for error in errors), errors)
             self.assertTrue(any("tracked_sensitive" in error for error in errors), errors)
@@ -167,7 +167,7 @@ class RepositoryV020Tests(unittest.TestCase):
                 side_effect=OSError("git unavailable"),
             ):
                 files = set(iter_public_files(root))
-            self.assertIn(notice, files)
+            self.assertIn(notice.resolve(), files)
 
     def test_public_cross_repo_example_is_deterministic_and_conditional(self):
         report = ROOT / "examples" / "cross-repo" / "abaqus-agent-report.json"
