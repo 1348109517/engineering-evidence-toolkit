@@ -34,6 +34,19 @@ Create a small contract with `artifact_id`, `scope`, `inputs`, `solver_status`, 
 - “Turn these proposed tunnel claims into IDs with required evidence and explicit review gates.”
 - “Compare two candidate contracts and report which one has the narrower, reproducible scope.”
 
+## Routing cases
+
+### Positive routing cases
+
+1. Define a bounded contract before extracting a displacement from a simulation result.
+2. Bind a proposed engineering claim to scope, units, frames, sources, and review gates.
+3. Compare two candidate contracts and identify the one with the narrower reproducible boundary.
+
+### Negative routing cases
+
+1. Do not route a request that only needs a source transformation ledger to this skill.
+2. Do not route a solver log classification here when no evidence contract is being designed.
+
 ## Common failures
 
 - Treating a whole ODB or report as evidence without naming a frame or region.

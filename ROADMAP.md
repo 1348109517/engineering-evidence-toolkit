@@ -1,5 +1,14 @@
 # Roadmap
 
+## Implemented in 0.2.0
+
+- Added the backward-compatible 0.2 contract checker with lifecycle precedence,
+  typed temporal markers, digest and ID validation, and a deterministic Abaqus
+  static-audit adapter.
+- Added cross-repository synthetic integration coverage, citation metadata,
+  six unbranded skill interfaces, routing corpus checks, and Ubuntu/Windows
+  Python 3.10/3.12 CI.
+
 ## Next
 
 - Add optional JSON Schema export without making external dependencies mandatory.
@@ -12,4 +21,5 @@
 - Add example integrations for laboratory data and analytical baselines.
 - Add reviewer-oriented HTML output built from the same contract.
 
-The roadmap is aspirational. It does not claim that any item is implemented or validated until it appears in a release note and CI result.
+The roadmap is aspirational. It does not claim that an item is implemented or
+validated until it appears in a release note and CI result.

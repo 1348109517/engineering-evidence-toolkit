@@ -12,6 +12,13 @@ Every public engineering sentence should pass through the same visible states:
 
 `PASS` from the CLI only means the contract is structurally complete and its declared physical-review state is accepted. It is not a promise that the model is physically valid or that a manuscript should be submitted.
 
+The checker evaluates all three solver lifecycle fields. Any `failed`,
+`rejected`, or `blocked` state yields `BLOCKED`. If none is blocked but any
+field is `not_run`, `not_started`, `pending`, or `required`, the result is
+`CONDITIONAL`. Only `complete`, `passed`, `reviewed` (and compatible legacy
+success spellings) across all three fields can yield `PASS`; an unknown state
+is a structural `BLOCKED` error.
+
 ## Reviewer questions
 
 - What exact artifact and frame support this sentence?

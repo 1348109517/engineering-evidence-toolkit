@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reproducible Reporting"
+  short_description: "Package deterministic evidence handoffs"
+  default_prompt: "Use $reproducible-reporting to package deterministic evidence handoffs."

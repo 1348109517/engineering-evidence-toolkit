@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this evidence toolkit, please cite this repository."
+title: "Engineering Evidence Toolkit"
+type: software
+authors:
+  - name: "Mid-Mountain"
+repository-code: "https://github.com/1348109517/engineering-evidence-toolkit"
+url: "https://github.com/1348109517/engineering-evidence-toolkit"
+license: Apache-2.0
+version: 0.2.0
+date-released: "2026-08-20"

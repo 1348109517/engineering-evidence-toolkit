@@ -12,6 +12,10 @@ source inventory -> evidence contract -> provenance ledger
                          reproducible report
 ```
 
+For a static Abaqus review, `scripts/from_abaqus_audit.py` sits at the source
+boundary: it accepts a report digest plus generalized findings and emits a
+static-only 0.2 contract. It does not import an ODB or claim solver execution.
+
 ## Boundaries
 
 - **Source inventory** identifies the artifact, owner, acquisition time, and digest. It does not copy private data into this repository.
@@ -21,6 +25,7 @@ source inventory -> evidence contract -> provenance ledger
 - **Result audit** checks simple, explainable invariants. It should never silently repair signs, units, or coordinate systems.
 - **Claim readiness audit** labels claims as ready, conditional, or blocked and requires resolvable evidence IDs.
 - **Reproducible report** packages metadata and commands. It is a handoff artifact, not a publication guarantee.
+- **Public-tree boundary** scans git-tracked files when a repository is available, while fallback scans exclude build outputs, worktrees, and bytecode caches but still include tests and `NOTICE`.
 
 ## Extending the contract
 

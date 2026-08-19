@@ -34,6 +34,19 @@ Return an audit table with check ID, rule, observed value, expected/bounded valu
 - “Compare the baseline and modified response without mixing local and global axes.”
 - “List which checks are conditional because no independent baseline was supplied.”
 
+## Routing cases
+
+### Positive routing cases
+
+1. Audit a displacement extrema for sign, units, coordinate system, region, and frame.
+2. Compare a baseline and modified response without mixing local and global axes.
+3. Preserve an outlier and record the bounded check that determines its disposition.
+
+### Negative routing cases
+
+1. Do not route a request to create a provenance chain for transformed source files to this skill.
+2. Do not route a request to decide publication readiness from solver lifecycle states alone.
+
 ## Common failures
 
 - Comparing MPa with Pa or millimetres with metres.
