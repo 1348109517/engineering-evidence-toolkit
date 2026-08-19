@@ -1,0 +1,4 @@
+interface:
+  display_name: "Claim Readiness Audit"
+  short_description: "Map claims to reviewable evidence"
+  default_prompt: "Use $claim-readiness-audit to map claims to reviewable evidence."

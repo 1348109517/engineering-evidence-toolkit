@@ -34,6 +34,19 @@ Create a claim matrix with claim text, scope, evidence IDs, audit status, open g
 - “Map the caption to frame, region, units, source, and result-audit rows.”
 - “Return a claim matrix and identify the minimum evidence needed to move each conditional claim to ready.”
 
+## Routing cases
+
+### Positive routing cases
+
+1. Map each clause of a result sentence to scoped evidence and provenance rows.
+2. Weaken a caption when the available evidence supports observation but not validation.
+3. Return a claim matrix with readiness, open gates, and the smallest next evidence action.
+
+### Negative routing cases
+
+1. Do not route a request to define fields, units, and source IDs before observations exist.
+2. Do not route a request to audit signs and magnitudes when no prose claim is under review.
+
 ## Common failures
 
 - Treating a statistical or numerical association as causation.

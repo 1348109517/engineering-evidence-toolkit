@@ -2,6 +2,8 @@ import re
 import unittest
 from pathlib import Path
 
+from scripts.public_tree_check import scan_public_tree
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = [
@@ -43,6 +45,7 @@ class RepositoryStructureTests(unittest.TestCase):
             "README.md",
             "README.zh-CN.md",
             "LICENSE",
+            "CITATION.cff",
             "NOTICE",
             "CONTRIBUTING.md",
             "SECURITY.md",
@@ -54,8 +57,11 @@ class RepositoryStructureTests(unittest.TestCase):
             "docs/claim-lifecycle.md",
             ".github/workflows/validate.yml",
             "scripts/evidence_check.py",
+            "scripts/public_tree_check.py",
             "examples/synthetic/README.md",
             "examples/synthetic/contract.json",
+            "examples/cross-repo/README.md",
+            "examples/cross-repo/abaqus-agent-report.json",
         ]
         for relative_path in required:
             self.assertTrue((ROOT / relative_path).is_file(), relative_path)
@@ -66,19 +72,7 @@ class RepositoryStructureTests(unittest.TestCase):
             self.assertIn(f"skills/{skill_name}/SKILL.md", readme)
 
     def test_public_tree_excludes_private_or_binary_material(self):
-        forbidden_names = {".env", ".env.local", "credentials.json", "token.json"}
-        binary_suffixes = {".odb", ".cae", ".sim", ".db", ".zip", ".7z", ".png", ".jpg"}
-        private_markers = ["Paper" + "Writing", "D" + ":\\", "1348109517" + "@" + "qq.com"]
-        for path in ROOT.rglob("*"):
-            if ".git" in path.parts or "tests" in path.parts or not path.is_file():
-                continue
-            self.assertNotIn(path.name.lower(), forbidden_names, path)
-            self.assertNotIn(path.suffix.lower(), binary_suffixes, path)
-            if path.stat().st_size > 250_000:
-                self.fail(f"unexpectedly large public file: {path}")
-            text = path.read_text(encoding="utf-8")
-            for marker in private_markers:
-                self.assertNotIn(marker, text, path)
+        self.assertEqual(scan_public_tree(ROOT), [])
 
 
 if __name__ == "__main__":

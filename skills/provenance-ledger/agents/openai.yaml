@@ -1,0 +1,4 @@
+interface:
+  display_name: "Provenance Ledger"
+  short_description: "Trace sources and transformations"
+  default_prompt: "Use $provenance-ledger to trace sources and transformations."

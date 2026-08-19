@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evidence Contract"
+  short_description: "Define bounded engineering evidence"
+  default_prompt: "Use $evidence-contract to define a bounded, testable evidence contract."

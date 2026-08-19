@@ -1,0 +1,4 @@
+interface:
+  display_name: "Result Audit"
+  short_description: "Audit engineering result boundaries"
+  default_prompt: "Use $result-audit to audit engineering result boundaries."

@@ -1,0 +1,26 @@
+{
+  "artifact_id": "synthetic-abaqus-audit",
+  "claims": [
+    {
+      "id": "CLAIM-001",
+      "text": "The static audit inventory is complete."
+    }
+  ],
+  "checks": [
+    {
+      "id": "AUDIT-001",
+      "name": "boundary-condition-inventory",
+      "note": "All synthetic supports are named.",
+      "status": "passed"
+    }
+  ],
+  "scope": {
+    "model": "synthetic",
+    "step": "static-audit"
+  },
+  "solver_status": {
+    "analysis": "complete",
+    "datacheck": "complete",
+    "physics_review": "required"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Solver Status Gate"
+  short_description: "Separate solver and review states"
+  default_prompt: "Use $solver-status-gate to separate solver and review states."

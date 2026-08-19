@@ -34,6 +34,19 @@ Write three independent statuses: `datacheck`, `analysis`, and `physics_review`.
 - “Build a gate table for datacheck pass, analysis complete, and boundary-condition review pending.”
 - “What evidence is still required before the claim can say ‘validated’?”
 
+## Routing cases
+
+### Positive routing cases
+
+1. Classify datacheck, analysis, and physics-review states from a solver report.
+2. Decide whether warnings, missing frames, or an open review gate keep a result conditional.
+3. Build a gate table that separates numerical completion from physical correctness.
+
+### Negative routing cases
+
+1. Do not route a request to track file transformations and parent digests to this skill.
+2. Do not route a request to rewrite a claim against evidence when solver states are already settled.
+
 ## Common failures
 
 - Reporting “solver success = model verified”.

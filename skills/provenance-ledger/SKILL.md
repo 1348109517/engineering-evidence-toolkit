@@ -34,6 +34,19 @@ Maintain a ledger row per source and per material transformation. A useful row c
 - “Find every claim whose observation has no parent source or frame identifier.”
 - “Review this transformation from local shell coordinates to global coordinates and list what must be recorded.”
 
+## Routing cases
+
+### Positive routing cases
+
+1. Trace a value copied from an ODB extract into a table and then into a claim.
+2. Record a unit conversion, coordinate transform, or filtering step with parent digests.
+3. Build a source ledger for several synthetic files and preserve stable observation IDs.
+
+### Negative routing cases
+
+1. Do not route a request to define the initial evidence contract when no transformation trace is needed.
+2. Do not route a request to classify solver completion versus physical review to this skill.
+
 ## Common failures
 
 - Hashing a report after manual edits but calling it the original source.

@@ -1,0 +1,30 @@
+{
+  "boundary": "Static contract review only. No solver execution or physical validation.",
+  "findings": [
+    {
+      "code": "BC-001",
+      "location": "model.boundary_conditions",
+      "message": "The synthetic support inventory is named.",
+      "next_action": "Review the declared support set.",
+      "skill": "abaqus-bc",
+      "status": "PASS"
+    },
+    {
+      "code": "LOAD-002",
+      "location": "loads.mapping",
+      "message": "The synthetic load mapping needs review.",
+      "next_action": "Check the mapped load source.",
+      "skill": "abaqus-load",
+      "status": "REVIEW_REQUIRED"
+    }
+  ],
+  "input_digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "runner_version": "0.3.0",
+  "scenario_id": "synthetic-cross-repo-audit",
+  "schema_version": "1.0",
+  "summary": {
+    "PASS": 1,
+    "REVIEW_REQUIRED": 1,
+    "WARNING": 0
+  }
+}

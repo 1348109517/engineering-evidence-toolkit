@@ -34,6 +34,19 @@ Produce a deterministic handoff containing a manifest, environment record, comma
 - “Make this report deterministic by sorting artifact rows and recording tool versions.”
 - “Redact private paths while preserving enough provenance for a reviewer to request the source.”
 
+## Routing cases
+
+### Positive routing cases
+
+1. Assemble a deterministic handoff with manifests, command logs, artifact digests, and open gates.
+2. Regenerate a report after an input or script changes and update its content-addressed rows.
+3. Package a synthetic evidence contract while marking proprietary solver steps as review-only.
+
+### Negative routing cases
+
+1. Do not route a request to judge a single result's sign, units, and baseline checks to this skill.
+2. Do not route a request to upgrade a prose claim without mapping its evidence and review state.
+
 ## Common failures
 
 - Reporting a command without the working directory, version, or input digest.
